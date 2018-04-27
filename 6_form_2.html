@@ -1,0 +1,88 @@
+<html>
+<head>
+	<title>Su dung form</title>
+</head>
+<script language="javascript">
+function checkAll(){
+	var txtStock = fm.txtStock.value;
+	if(txtStock == ""){
+		alert("Khong duoc de trong du lieu");
+		fm.txtStock.focus();
+		return false;
+	}
+
+	//kiem tra gia tri truong radiobutton
+	var cnt = 0;
+	var t1;
+	for(var i = 0; i < fm.rad.length; i++){
+		if(fm.rad[i].checked == true){
+			cnt++;
+		}
+	}
+	if(cnt == 0){
+		alert("Phai click vao mot trong 3 truong: beginner/intermeiate/expert");
+		return false;
+	}
+	else{
+		for(var j = 0; j <=cnt; j++){
+			if(fm.rad[j].checked == true)
+				alert(fm.rad[j].value);
+		}
+		return true;
+	}
+	
+	
+	//Kiem tra gia tri cua truong checkbox
+	var cntCheckBox = 0;
+	for(var i = 0; i < fm.cb.length; i++){
+		if(fm.cb[i].checked == true){
+			cntCheckBox++;
+		}
+	}
+	if(cntCheckBox == 0){
+		alert("Phai click vao mot trong 3 truong: Individual/Options/Mutual");
+		return false;
+	}
+	
+	
+	//var strText = "Experience: " + ;
+	
+	
+	return true;
+}
+</script>
+<body>
+<form name="fm" method="post" action="" onSubmit="return checkAll();">
+	<h2>Sample Stock Survey</h2>
+	<h3>Describe your investment experience</h3>
+	<p>
+		<input name="rad" type="radio" value="1"> beginner
+		<input name="rad" type="radio" value="2"> intermeiate 
+		<input name="rad" type="radio" value="3">expert
+	</p>
+	<h3>Types of Investments you make</h3>
+	<p>
+		<input name="cb" type="checkbox" value="1"> Individual Stocks 
+		<input name="cb" type="checkbox" value="2" checked>Options 
+		<input type="checkbox" name="cb" value="3"> Mutual Funds</p>
+	<h3>How do you buy your stocks? 
+		<select name="select">
+			<option selected value="1">1) On-Line</option>
+			<option value="2"> 2) Touch Tone Trading</option>
+			<option value="3"> 3) Broker Assisted</option>
+			<option value="4"> 4) Other</option>
+		</select>
+	</h3>
+	<h3>What is your hot stock pick ? 
+		<input name="txtStock" type="text" id="txtStock">
+	</h3>
+	<h3>Any Investment Advice for others? 
+		<textarea name="txt2" cols="40" rows="3"></textarea>
+	</h3>
+	<p>
+		<input type="submit" name="Submit" value="Submit">
+		<input type="reset" name="Submit2" value="Reset">
+</p>
+</form>
+</body>
+</html>

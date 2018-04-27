@@ -1,0 +1,34 @@
+<HTML>
+<HEAD>
+	<TITLE>Job application</TITLE>
+</HEAD>
+<BODY>
+<H1 align="center"><FONT SIZE = "4" COLOR = "Forestgreen"> Application Form</FONT></H1>
+<HR><BR>
+<FORM action="http://somesite.com/processform" method="post">
+	<P>
+	<LABEL for="firstname">Name: </LABEL><INPUT type="text" name="firstname"><BR>
+	<P>Area of Interest
+	<BR><BR>
+	<INPUT TYPE="RADIO" NAME="CONTROL1" VALUE="0" CHECKED>Web Designer
+	<INPUT TYPE="RADIO" NAME="CONTROL1" VALUE="1" >Web Administrator
+	<INPUT TYPE="RADIO" NAME="CONTROL1" VALUE="2" >Web Developer
+	<P>Experience
+		<SELECT NAME="CONTROL2">
+			<OPTION>None</OPTION>
+			<OPTION>1 Year</OPTION>
+			<OPTION>3 Years</OPTION>
+			<OPTION>5 Years</OPTION>
+		</SELECT>
+	<BR>
+	<P>Comments
+	<BR>
+		<TEXTAREA NAME="CONTROL3" COLS="30" ROWS="5">Type your comments here.</TEXTAREA>
+	<BR>
+	<P><INPUT NAME="CONTROL4" TYPE="CHECKBOX" CHECKED>Send acknowledgement
+	<BR>
+	<P><INPUT TYPE="SUBMIT" VALUE="OK">
+		<INPUT TYPE="RESET" VALUE="RESET">
+</FORM>
+</BODY>
+</HTML>
